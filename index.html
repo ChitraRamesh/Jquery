@@ -11,9 +11,9 @@
 <div class="row">
 <!-- One button for each slide command -->
 
-<button id="btnSlideUp" >Slide Up</button>
-<button id="btnSlideDown">Slide Down</button>
-<button id="btnSlideToggle">Slide Toggle</button>
+<button class="btn" id="btnSlideUp" >Slide Up</button>
+<button class="btn" id="btnSlideDown">Slide Down</button>
+<button class="btn" id="btnSlideToggle">Slide Toggle</button>
 </div> 
 
 <div id="slideMe" style="border-style:solid; background-color:red;height:200px" >
@@ -21,9 +21,13 @@
 </div> 
 
 <script>
-$('#btnSlideUp').click(function() {
-    $('#slideMe').slideUp('slow');
-});
+$('#btnSlideUp').click( //When the button with id btnSlideUp is clicked call the function below.
+    function()
+    {
+            $('#slideMe').slideUp('slow'); //SlideUp is a built-in function thats slides the control,
+                                         //in this case the control whose id is slideMe
+    }
+);
 $('#btnSlideDown').click(function() {
     $('#slideMe').slideDown('slow');
 });
