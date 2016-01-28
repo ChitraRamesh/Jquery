@@ -1,39 +1,66 @@
-
-<!--For bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
-
-<!--You need to include this for jQuery to work-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<!-- coment-->
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
 <body>
 
-<div class="row">
-<!-- One button for each slide command -->
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="myPanel" data-position="right"> 
+    <h2>Panel Header</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+  </div> 
 
-<button class="btn" id="btnSlideUp" >Slide Up</button>
-<button class="btn" id="btnSlideDown">Slide Down</button>
-<button class="btn" id="btnSlideToggle">Slide Toggle</button>
+  <div data-role="header">
+    <h1>Page Header</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Click on the button below to open the Panel.</p>
+    <a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
+
+      <p>Click on the link to see turn effect.</p>
+    <a href="#pagetwo" data-transition="turn">Turn to Page Two</a>
+<div data-role="collapsible">
+  <h1>Click me - I'm collapsible!</h1>
+  <p>I'm the expanded content.</p>
+</div>
+  </div>
+
+  <div data-role="footer">
+    <h1>Page Footer</h1>
+  </div> 
 </div> 
 
-<div id="slideMe" style="border-style:solid; background-color:red;height:200px" >
-    This content will appear and disappear when the div is slid in and out.
+<div data-role="page" id="pagetwo">
+  <div data-role="panel" id="myPanel2"  > 
+    <h2>Panel Header 2</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#pagetwo" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+  </div> 
+
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Click on the link to go back. <b>Note</b>: fade is default.</p>
+    <a href="#pageone">Go to Page One</a>
+
+ <p>Click on the button below to open the Panel.</p>
+    <a href="#myPanel2" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
+
+
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
 </div> 
 
-<script>
-$('#btnSlideUp').click( //When the button with id btnSlideUp is clicked call the function below.
-    function()
-    {
-            $('#slideMe').slideUp('slow'); //SlideUp is a built-in function thats slides the control,
-                                         //in this case the control whose id is slideMe
-    }
-);
-$('#btnSlideDown').click(function() {
-    $('#slideMe').slideDown('slow');
-});
-$('#btnSlideToggle').click(function() {
-    $('#slideMe').slideToggle('fast');
-});
-
-</script>
 </body>
+</html>

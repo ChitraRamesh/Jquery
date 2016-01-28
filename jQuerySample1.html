@@ -1,0 +1,39 @@
+
+<!--For bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+
+<!--You need to include this for jQuery to work-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+<body>
+
+<div class="row">
+<!-- One button for each slide command -->
+
+<button class="btn" id="btnSlideUp" >Slide Up</button>
+<button class="btn" id="btnSlideDown">Slide Down</button>
+<button class="btn" id="btnSlideToggle">Slide Toggle</button>
+</div> 
+
+<div id="slideMe" style="border-style:solid; background-color:red;height:200px" >
+    This content will appear and disappear when the div is slid in and out.
+</div> 
+
+<script>
+$('#btnSlideUp').click( //When the button with id btnSlideUp is clicked call the function below.
+    function()
+    {
+            $('#slideMe').slideUp('slow'); //SlideUp is a built-in function thats slides the control,
+                                         //in this case the control whose id is slideMe
+    }
+);
+$('#btnSlideDown').click(function() {
+    $('#slideMe').slideDown('slow');
+});
+$('#btnSlideToggle').click(function() {
+    $('#slideMe').slideToggle('fast');
+});
+
+</script>
+</body>
